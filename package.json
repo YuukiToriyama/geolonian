@@ -1,0 +1,24 @@
+{
+  "name": "sandbox-nja",
+  "version": "0.0.1",
+  "description": "@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール",
+  "bin": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YUUKIToriyama/sandbox-nja.git"
+  },
+  "author": "YUUKIToriyama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YUUKIToriyama/sandbox-nja/issues"
+  },
+  "homepage": "https://github.com/YUUKIToriyama/sandbox-nja#readme",
+  "dependencies": {
+    "@geolonia/normalize-japanese-addresses": "^0.1.0",
+    "chalk": "^4.1.0"
+  }
+}
