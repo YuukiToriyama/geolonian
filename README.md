@@ -1,4 +1,4 @@
-# sandbox-nja
+# geolonia-nja-cli
 @geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール
 
 ```bash

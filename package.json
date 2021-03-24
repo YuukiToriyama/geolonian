@@ -1,5 +1,5 @@
 {
-  "name": "sandbox-nja",
+  "name": "geolonia-nja-cli",
   "version": "0.0.1",
   "description": "@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール",
   "bin": "main.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YUUKIToriyama/sandbox-nja.git"
+    "url": "git+https://github.com/YUUKIToriyama/geolonia-nja-cli.git"
   },
   "author": "YUUKIToriyama",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/YUUKIToriyama/sandbox-nja/issues"
+    "url": "https://github.com/YUUKIToriyama/geolonia-nja-cli/issues"
   },
-  "homepage": "https://github.com/YUUKIToriyama/sandbox-nja#readme",
+  "homepage": "https://github.com/YUUKIToriyama/geolonia-nja-cli#readme",
   "dependencies": {
     "@geolonia/normalize-japanese-addresses": "^0.1.0",
     "chalk": "^4.1.0"
