@@ -1,5 +1,5 @@
 # geolonia-nja-cli
-@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール
+[@geolonia/normalize-japanese-addresses](https://github.com/geolonia/normalize-japanese-addresses)をコンソール上で簡単にテストするためのモジュール
 
 ```bash
 $ node main.js 

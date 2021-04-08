@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/YUUKIToriyama/geolonia-nja-cli#readme",
   "dependencies": {
-    "@geolonia/normalize-japanese-addresses": "^0.1.5",
+    "@geolonia/normalize-japanese-addresses": "^0.1.10",
     "chalk": "^4.1.0"
   }
 }
