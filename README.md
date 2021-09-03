@@ -20,11 +20,13 @@ node dist/main.js normalize --address 東京都港区芝公園４丁目２−８
 ```
 ```javascript
 {
-        "pref": "東京都",
-        "city": "港区",
-        "town": "芝公園四丁目",
-        "addr": "2-8",
-        "level": 3
+	"pref": "東京都",
+	"city": "港区",
+	"town": "芝公園四丁目",
+	"addr": "2-8",
+	"lat": 35.656459,
+	"lng": 139.74764,
+	"level": 3
 }
 ```
 
@@ -33,11 +35,13 @@ node dist/main.js normalize --address 東京都港区芝公園４丁目２−８
 ```
 ```javascript
 {
-        "pref": "東京都",
-        "city": "",
-        "town": "",
-        "addr": "港区芝公園4丁目2-8",
-        "level": 1
+	"pref": "東京都",
+	"city": "",
+	"town": "",
+	"addr": "港区芝公園4丁目2-8",
+	"lat": null,
+	"lng": null,
+	"level": 1
 }
 ```
 
@@ -49,15 +53,21 @@ $ node dist/main.js normalize
 {
 	"pref": "北海道",
 	"city": "札幌市西区",
-	"town": "24軒2条2丁目",
-	"addr": "3-3"
+	"town": "二十四軒二条二丁目",
+	"addr": "3-3",
+	"lat": 43.074273,
+	"lng": 141.315099,
+	"level": 3
 }
 >>> 大阪府堺市北区新金岡町４丁１ー８
 {
 	"pref": "大阪府",
 	"city": "堺市北区",
-	"town": "新金岡町4丁",
-	"addr": "1-8"
+	"town": "新金岡町四丁",
+	"addr": "1-8",
+	"lat": 34.568184,
+	"lng": 135.519409,
+	"level": 3
 }
 >>> 
 ```
