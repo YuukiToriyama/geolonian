@@ -4,10 +4,19 @@
 
 ## Usage
 
+### Preparation
+
+```bash
+git clone https://github.com/YUUKIToriyama/geolonia-nja-cli.git
+cd geolonia-nja-cli
+npm install
+npm run build
+```
+
 ### Command
 
 ```bash
-node main.js -a 東京都港区芝公園４丁目２−８
+node dist/main.js normalize --address 東京都港区芝公園４丁目２−８
 ```
 ```javascript
 {
@@ -20,7 +29,7 @@ node main.js -a 東京都港区芝公園４丁目２−８
 ```
 
 ```bash
-node main.js -l 1 -a 東京都港区芝公園４丁目２−８
+node dist/main.js normalize --address 東京都港区芝公園４丁目２−８ --level 1
 ```
 ```javascript
 {
@@ -35,7 +44,7 @@ node main.js -l 1 -a 東京都港区芝公園４丁目２−８
 ### REPL
 
 ```bash
-$ node main.js 
+$ node dist/main.js normalize
 >>> 北海道札幌市西区24-2-2-3-3
 {
 	"pref": "北海道",
