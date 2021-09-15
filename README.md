@@ -1,22 +1,19 @@
-# geolonia-nja-cli
+# YUUKIToriyama/geolonia
 
 [@geolonia/normalize-japanese-addresses](https://github.com/geolonia/normalize-japanese-addresses)をコンソール上で簡単にテストするためのモジュール
 
 ## Usage
 
-### Preparation
+### Installation
 
 ```bash
-git clone https://github.com/YUUKIToriyama/geolonia-nja-cli.git
-cd geolonia-nja-cli
-npm install
-npm run build
+npm install -g @toriyama/geolonian
 ```
 
 ### Command
 
 ```bash
-node dist/main.js normalize --address 東京都港区芝公園４丁目２−８
+geolonian normalize --address 東京都港区芝公園４丁目２−８
 ```
 ```javascript
 {
@@ -31,7 +28,7 @@ node dist/main.js normalize --address 東京都港区芝公園４丁目２−８
 ```
 
 ```bash
-node dist/main.js normalize --address 東京都港区芝公園４丁目２−８ --level 1
+geolonian normalize --address 東京都港区芝公園４丁目２−８ --level 1
 ```
 ```javascript
 {
@@ -48,7 +45,7 @@ node dist/main.js normalize --address 東京都港区芝公園４丁目２−８
 ### REPL
 
 ```bash
-$ node dist/main.js normalize
+$ geolonian normalize
 >>> 北海道札幌市西区24-2-2-3-3
 {
 	"pref": "北海道",
@@ -75,8 +72,8 @@ $ node dist/main.js normalize
 ## Development
 
 ```bash
-git clone git@github.com:YUUKIToriyama/geolonia-nja-cli.git
-cd geolonia-nja-cli
+git clone git@github.com:YUUKIToriyama/geolonian.git
+cd geolonian
 npm install
 npm run build
 node dist/main.js

@@ -1,23 +1,24 @@
 {
-  "name": "geolonia-nja-cli",
-  "version": "0.0.5",
+  "name": "@toriyama/geolonian",
+  "version": "0.1.0",
   "description": "@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール",
   "bin": "dist/main.js",
   "scripts": {
     "start": "node main.js",
-    "build": "tsc",
+    "build": "rimraf ./dist && tsc",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YUUKIToriyama/geolonia-nja-cli.git"
+    "url": "git+https://github.com/YUUKIToriyama/geolonian.git"
   },
   "author": "YUUKIToriyama<github@toriyama.dev>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/YUUKIToriyama/geolonia-nja-cli/issues"
+    "url": "https://github.com/YUUKIToriyama/geolonian/issues"
   },
-  "homepage": "https://github.com/YUUKIToriyama/geolonia-nja-cli#readme",
+  "homepage": "https://github.com/YUUKIToriyama/geolonian#readme",
   "dependencies": {
     "@caporal/core": "^2.0.2",
     "@geolonia/normalize-japanese-addresses": "^2.1.0",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.0.0",
+    "rimraf": "^3.0.2",
     "typescript": "^4.4.2"
   }
 }
