@@ -6,8 +6,9 @@
   - [@geolonia/normalize-japanese-addresses](https://github.com/geolonia/normalize-japanese-addresses)
   - [Geolonia 住所データ](https://geolonia.github.io/japanese-addresses/)に基づいて住所の正規化を行なうライブラリです。
   - 表記のゆらぎの修正だけでなく、住所から緯度経度を求めるジオコーダーとしても使うことができます。
-- 逆ジオコーダー - [@geolonia/open-reverse-geocoder](https://github.com/geolonia/open-reverse-geocoder) - オープンソースの逆ジオコーダーです。緯度経度から都道府県名および市町村名を取得することができます。
-  をコンソール上で簡単にテストするためのモジュール
+- 逆ジオコーダー
+  - [@geolonia/open-reverse-geocoder](https://github.com/geolonia/open-reverse-geocoder)
+  - オープンソースの逆ジオコーダーです。緯度経度から都道府県名および市町村名を取得することができます。
 
 ## Usage
 
