@@ -1,6 +1,13 @@
 import readline from 'readline';
 import chalk from 'chalk';
 import * as geolonia from '@geolonia/normalize-japanese-addresses';
+import { openReverseGeocoder } from '@geolonia/open-reverse-geocoder';
+
+const reverseGeocoder = (latitude: number, longitude: number) => {
+	openReverseGeocoder([latitude, longitude]).then(result => {
+		console.log(chalk.green(JSON.stringify(result, null, "\t")));
+	});
+}
 
 const stdin: NodeJS.ReadableStream = process.stdin;
 const stdout: NodeJS.WritableStream = process.stdout;
@@ -45,5 +52,6 @@ const callGeolonia = (address: string, options: { level?: number, onEnd?: Functi
 
 export {
 	startRepl,
-	callGeolonia
+	callGeolonia,
+	reverseGeocoder
 };
