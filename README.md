@@ -1,6 +1,13 @@
 # YUUKIToriyama/geolonian
 
-[@geolonia/normalize-japanese-addresses](https://github.com/geolonia/normalize-japanese-addresses)をコンソール上で簡単にテストするためのモジュール
+便利なオープンソースの GIS ライブラリ群をコマンドライン上でも使えるようにしました。
+
+- 住所正規化ツール
+  - [@geolonia/normalize-japanese-addresses](https://github.com/geolonia/normalize-japanese-addresses)
+  - [Geolonia 住所データ](https://geolonia.github.io/japanese-addresses/)に基づいて住所の正規化を行なうライブラリです。
+  - 表記のゆらぎの修正だけでなく、住所から緯度経度を求めるジオコーダーとしても使うことができます。
+- 逆ジオコーダー - [@geolonia/open-reverse-geocoder](https://github.com/geolonia/open-reverse-geocoder) - オープンソースの逆ジオコーダーです。緯度経度から都道府県名および市町村名を取得することができます。
+  をコンソール上で簡単にテストするためのモジュール
 
 ## Usage
 
@@ -12,9 +19,12 @@ npm install -g @toriyama/geolonian
 
 ### Command
 
+#### 住所正規化ツール
+
 ```bash
 geolonian normalize --address 東京都港区芝公園４丁目２−８
 ```
+
 ```javascript
 {
 	"pref": "東京都",
@@ -30,6 +40,7 @@ geolonian normalize --address 東京都港区芝公園４丁目２−８
 ```bash
 geolonian normalize --address 東京都港区芝公園４丁目２−８ --level 1
 ```
+
 ```javascript
 {
 	"pref": "東京都",
@@ -42,31 +53,30 @@ geolonian normalize --address 東京都港区芝公園４丁目２−８ --level
 }
 ```
 
-### REPL
+#### 逆ジオコーダー
 
 ```bash
-$ geolonian normalize
->>> 北海道札幌市西区24-2-2-3-3
+geolonian reverse-geocoder 135.195444 34.690167
+```
+
+```javascript
 {
-	"pref": "北海道",
-	"city": "札幌市西区",
-	"town": "二十四軒二条二丁目",
-	"addr": "3-3",
-	"lat": 43.074273,
-	"lng": 141.315099,
-	"level": 3
+	"code": "28110",
+	"prefecture": "兵庫県",
+	"city": "神戸市中央区"
 }
->>> 大阪府堺市北区新金岡町４丁１ー８
+```
+
+```bash
+geolonian reverse-geocoder --lat 135 --lng 35
+```
+
+```javascript
 {
-	"pref": "大阪府",
-	"city": "堺市北区",
-	"town": "新金岡町四丁",
-	"addr": "1-8",
-	"lat": 34.568184,
-	"lng": 135.519409,
-	"level": 3
+	"code": "28213",
+	"prefecture": "兵庫県",
+	"city": "西脇市"
 }
->>> 
 ```
 
 ## Development

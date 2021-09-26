@@ -1,6 +1,6 @@
 {
   "name": "@toriyama/geolonian",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール",
   "bin": "dist/main.js",
   "scripts": {
