@@ -1,6 +1,6 @@
 {
   "name": "@toriyama/geolonian",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール",
   "bin": "dist/main.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/YUUKIToriyama/geolonian#readme",
   "dependencies": {
     "@caporal/core": "^2.0.2",
-    "@geolonia/normalize-japanese-addresses": "2.1.0",
+    "@geolonia/normalize-japanese-addresses": "2.3.3",
     "@geolonia/open-reverse-geocoder": "^0.1.0",
     "chalk": "^4.1.2"
   },
