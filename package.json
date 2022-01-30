@@ -21,7 +21,7 @@
   "homepage": "https://github.com/YUUKIToriyama/geolonian#readme",
   "dependencies": {
     "@caporal/core": "^2.0.2",
-    "@geolonia/normalize-japanese-addresses": "2.3.3",
+    "@geolonia/normalize-japanese-addresses": "^2.5.1",
     "@geolonia/open-reverse-geocoder": "^0.1.0",
     "chalk": "^4.1.2"
   },
