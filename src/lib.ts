@@ -1,6 +1,7 @@
 import readline from 'readline';
 import chalk from 'chalk';
-import * as geolonia from '@geolonia/normalize-japanese-addresses';
+import { normalize } from '@geolonia/normalize-japanese-addresses';
+import { NormalizeResult } from '@geolonia/normalize-japanese-addresses/dist/normalize';
 import { openReverseGeocoder } from '@geolonia/open-reverse-geocoder';
 
 const reverseGeocoder = (latitude: number, longitude: number) => {
@@ -34,9 +35,9 @@ const startRepl = () => {
 	});
 }
 
-const callGeolonia = (address: string, options: { level?: number, onEnd?: Function }): Promise<geolonia.NormalizeResult> => {
+const callGeolonia = (address: string, options: { level?: number, onEnd?: Function }): Promise<NormalizeResult> => {
 	return new Promise((resolve, reject) => {
-		geolonia.normalize(address, { level: options.level || 3 }).then(result => {
+		normalize(address, { level: options.level || 3 }).then(result => {
 			console.log(chalk.green(JSON.stringify(result, null, "\t")));
 			resolve(result);
 		}).catch(error => {

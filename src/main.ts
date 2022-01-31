@@ -2,13 +2,22 @@
 import * as Caporal from '@caporal/core';
 import { startRepl, callGeolonia, reverseGeocoder } from './lib';
 
+import { updateDatabase } from './update';
+
 import fs from "fs";
 const { version } = JSON.parse(fs.readFileSync(__dirname + "/../package.json").toString("utf8"));
 
 Caporal.program
-	.name("geolonia-nja-cli")
+	.name("@toriyama/geolonian")
 	.version(version)
 	.description("@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール");
+
+
+Caporal.program
+	.command("update", "Download address database")
+	.action(() => {
+		updateDatabase();
+	});
 
 Caporal.program
 	.command("normalize", "Normalize an address")
