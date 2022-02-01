@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import * as Caporal from '@caporal/core';
-import { reverseGeocoder } from './lib';
 
 import { updateDatabase } from './update';
 import { normalizeAddress } from './normalize';
+import { reverseGeocoder } from './reverseGeocoder';
 
 import fs from "fs";
 const { version } = JSON.parse(fs.readFileSync(__dirname + "/../package.json").toString("utf8"));
@@ -13,13 +13,14 @@ Caporal.program
 	.version(version)
 	.description("@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール");
 
-
+// `geolonian update`
 Caporal.program
 	.command("update", "Download address database")
 	.action(() => {
 		updateDatabase();
 	});
 
+// `geolonian normalize`
 Caporal.program
 	.command("normalize", "Normalize an address")
 	.option("-a, --address <address>", "Address")
@@ -37,6 +38,7 @@ Caporal.program
 		});
 	});
 
+// `geolonian reverse-geocoder`
 Caporal.program
 	.command("reverse-geocoder", "Get address from geographic coordinates")
 	.argument("<longitude>", "緯度と経度の間は半角スペースで区切る必要があります。", {
