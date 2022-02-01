@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import * as Caporal from '@caporal/core';
-import { startRepl, callGeolonia, reverseGeocoder } from './lib';
+import { reverseGeocoder } from './lib';
 
 import { updateDatabase } from './update';
+import { normalizeAddress } from './normalize';
 
 import fs from "fs";
 const { version } = JSON.parse(fs.readFileSync(__dirname + "/../package.json").toString("utf8"));
@@ -25,18 +26,15 @@ Caporal.program
 	.option("-l, --level <depth>", "Depth of normalization", {
 		default: 3
 	})
+	.option("--use-local", "Use local data source", {
+		default: false
+	})
 	.action(({ options }) => {
-		if (options.address != undefined) {
-			// 引数が指定されている場合
-			// その住所について正規化を行なう
-			callGeolonia(options.address as string, {
-				level: options.level as number
-			})
-		} else {
-			// 引数がない場合
-			// REPLを起動する
-			startRepl();
-		}
+		normalizeAddress({
+			address: options.address as string,
+			level: options.level as number,
+			useLocalSource: options.useLocal as boolean
+		});
 	});
 
 Caporal.program
