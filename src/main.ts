@@ -1,12 +1,14 @@
 #!/usr/bin/env node
-import * as Caporal from '@caporal/core';
+import Caporal from '@caporal/core';
 
-import { updateDatabase } from './update';
-import { normalizeAddress } from './normalize';
-import { reverseGeocoder } from './reverseGeocoder';
+import { updateDatabase } from './update.js';
+import { normalizeAddress } from './normalize.js';
+import { reverseGeocoder } from './reverseGeocoder.js';
 
 import fs from "fs";
-const { version } = JSON.parse(fs.readFileSync(__dirname + "/../package.json").toString("utf8"));
+import path from "path";
+const dirname = path.dirname(new URL(import.meta.url).pathname);
+const { version } = JSON.parse(fs.readFileSync(dirname + "/../package.json").toString("utf8"));
 
 Caporal.program
 	.name("@toriyama/geolonian")

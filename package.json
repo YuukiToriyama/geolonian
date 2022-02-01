@@ -2,6 +2,7 @@
   "name": "@toriyama/geolonian",
   "version": "0.3.1",
   "description": "@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール",
+  "type": "module",
   "bin": "dist/main.js",
   "scripts": {
     "start": "node dist/main.js",
