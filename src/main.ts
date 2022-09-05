@@ -1,26 +1,26 @@
 #!/usr/bin/env node
-import Caporal from '@caporal/core';
+import Caporal from '@caporal/core'
 
-import { updateDatabase } from './update.js';
-import { normalizeAddress } from './normalize.js';
-import { reverseGeocoder } from './reverseGeocoder.js';
+import { normalizeAddress } from './normalize.js'
+import { reverseGeocoder } from './reverseGeocoder.js'
+import { updateDatabase } from './update.js'
 
-import fs from "fs";
-import path from "path";
-const dirname = path.dirname(new URL(import.meta.url).pathname);
-const { version } = JSON.parse(fs.readFileSync(dirname + "/../package.json").toString("utf8"));
+import fs from "fs"
+import path from "path"
+const dirname = path.dirname(new URL(import.meta.url).pathname)
+const { version } = JSON.parse(fs.readFileSync(dirname + "/../package.json").toString("utf8"))
 
 Caporal.program
 	.name("@toriyama/geolonian")
 	.version(version)
-	.description("@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール");
+	.description("@geolonia/normalize-japanese-addressesをコンソール上で簡単にテストするためのモジュール")
 
 // `geolonian update`
 Caporal.program
 	.command("update", "Download address database")
 	.action(() => {
-		updateDatabase();
-	});
+		updateDatabase()
+	})
 
 // `geolonian normalize`
 Caporal.program
@@ -33,12 +33,13 @@ Caporal.program
 		default: false
 	})
 	.action(({ options }) => {
+		console.log(options.level)
 		normalizeAddress({
 			address: options.address as string,
 			level: options.level as number,
 			useLocalSource: options.useLocal as boolean
-		});
-	});
+		})
+	})
 
 // `geolonian reverse-geocoder`
 Caporal.program
@@ -63,15 +64,15 @@ Caporal.program
 		// 引数で緯度・経度を指定した場合
 		// 呼び出し例: geolonian reverse-geocoder 139.7673068 35.6809591
 		if (args.longitude !== 0 && args.latitude !== 0) {
-			reverseGeocoder(args.longitude as number, args.latitude as number);
+			reverseGeocoder(args.longitude as number, args.latitude as number)
 		} else {
 			// キーワード引数で緯度、経度をそれぞれ指定した場合
 			// 呼び出し例: geolonian reverse-geocoder --lat 139.7673068 --lng 35.6809591
 			if (options.lat !== undefined && options.lng !== undefined) {
-				reverseGeocoder(options.lat as number, options.lng as number);
+				reverseGeocoder(options.lat as number, options.lng as number)
 			}
 		}
 	})
 
 
-Caporal.program.run();
+Caporal.program.run()
